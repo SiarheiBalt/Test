@@ -1,0 +1,5 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-areas: "cl1 cl2 cl3 cl4 cl5 cl6 cl0";
+}

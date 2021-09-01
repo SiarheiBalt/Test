@@ -1,0 +1,67 @@
+.mask {
+  background-color: whitesmoke;
+  border-top: 5px solid white;
+  border-bottom: 2px solid #80808045;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0 15px;
+  width: 1000px;
+  margin: auto;
+}
+.calendar {
+}
+
+.button__top {
+  border: none;
+  color: white;
+  background-color: rgb(2, 117, 204);
+  margin: 0 5px;
+  cursor: pointer;
+}
+.button__top:active {
+  background-color: rgb(203, 229, 238);
+}
+.input {
+  width: 300px;
+  height: 20px;
+  border: none;
+  border-bottom: solid rgb(170, 170, 170) 1px;
+}
+.input:focus {
+  background-color: rgb(203, 229, 238);
+  border-bottom: solid rgb(170, 170, 170) 1px;
+  border: none;
+  outline: none;
+}
+.input:hover {
+  border-bottom: solid rgb(170, 170, 170) 1px;
+  background-color: rgb(203, 229, 238);
+}
+.ico {
+  height: 15px;
+  color: rgb(141, 141, 141);
+  margin-right: 7px;
+}
+.container {
+  width: 1000px;
+  margin: auto;
+}
+.navigation {
+  margin: 20px 0;
+}
+.button__navigation {
+  background-color: white;
+  border: 1px solid rgb(153, 153, 153);
+  border-radius: 3px;
+  color: gray;
+  cursor: pointer;
+  margin: 0 5px;
+}
+.button__navigation:active {
+  background-color: rgb(203, 229, 238);
+}
+.navigation > span {
+  font-weight: 600;
+}
