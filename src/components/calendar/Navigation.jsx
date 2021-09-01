@@ -1,13 +1,15 @@
 import cl from "./Calendar.module.css";
 import { ButtonForTop } from "./ButtonForTop";
 
-export const Navigation = () => {
+export const Navigation = ({ month, changeMonth, year, disabled }) => {
   return (
     <div className={cl.navigation}>
-      <ButtonForTop action={"<"} />
-      <span>Mont 2020</span>
-      <ButtonForTop action={">"} />
-      <ButtonForTop action={"Сегодня"} />
+      <ButtonForTop action={"<"} onClick={changeMonth} disabled={disabled} />
+      <span>
+        {month} {year}
+      </span>
+      <ButtonForTop action={">"} onClick={changeMonth} />
+      <ButtonForTop action={"Сегодня"} changeMonth={changeMonth} />
     </div>
   );
 };

@@ -10,8 +10,6 @@
   width: 1000px;
   margin: auto;
 }
-.calendar {
-}
 
 .button__top {
   border: none;
@@ -27,7 +25,6 @@
   width: 300px;
   height: 20px;
   border: none;
-  border-bottom: solid rgb(170, 170, 170) 1px;
 }
 .input:focus {
   background-color: rgb(203, 229, 238);
@@ -36,7 +33,6 @@
   outline: none;
 }
 .input:hover {
-  border-bottom: solid rgb(170, 170, 170) 1px;
   background-color: rgb(203, 229, 238);
 }
 .ico {
@@ -50,7 +46,11 @@
 }
 .navigation {
   margin: 20px 0;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
 }
+
 .button__navigation {
   background-color: white;
   border: 1px solid rgb(153, 153, 153);
@@ -61,6 +61,10 @@
 }
 .button__navigation:active {
   background-color: rgb(203, 229, 238);
+}
+.button__navigation:disabled {
+  background-color: wheat;
+  cursor: auto;
 }
 .navigation > span {
   font-weight: 600;

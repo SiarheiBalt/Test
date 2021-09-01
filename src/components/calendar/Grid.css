@@ -1,5 +1,22 @@
 .grid {
   display: grid;
+  box-sizing: border-box;
   grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: auto;
   grid-template-areas: "cl1 cl2 cl3 cl4 cl5 cl6 cl0";
+  border-top: solid 1px rgb(168, 168, 168);
+  border-left: solid 1px rgb(168, 168, 168);
+}
+.grid__element {
+  height: 142px;
+  border-bottom: solid 1px rgb(168, 168, 168);
+  border-right: solid 1px rgb(168, 168, 168);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.date_title {
+  margin-left: 3px;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: gray;
 }
