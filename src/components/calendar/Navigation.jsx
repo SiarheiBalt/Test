@@ -9,7 +9,7 @@ export const Navigation = ({ month, changeMonth, year, disabled }) => {
         {month} {year}
       </span>
       <ButtonForTop action={">"} onClick={changeMonth} />
-      <ButtonForTop action={"Сегодня"} changeMonth={changeMonth} />
+      <ButtonForTop action={"Сегодня"} onClick={changeMonth} />
     </div>
   );
 };

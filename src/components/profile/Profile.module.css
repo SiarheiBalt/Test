@@ -1,0 +1,13 @@
+.li {
+  list-style-type: none;
+}
+.li:nth-child(odd) {
+  background-color: aliceblue;
+}
+.container {
+  width: 1000px;
+  margin: auto;
+}
+.container h3 {
+  text-align: center;
+}

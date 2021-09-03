@@ -43,6 +43,7 @@
 .container {
   width: 1000px;
   margin: auto;
+  margin-bottom: 20px;
 }
 .navigation {
   margin: 20px 0;
@@ -68,4 +69,14 @@
 }
 .navigation > span {
   font-weight: 600;
+}
+.output_search {
+  position: absolute;
+  right: 15%;
+  width: 20%;
+  top: 15%;
+}
+.li {
+  list-style-type: none;
+  background-color: rgb(200, 234, 255);
 }

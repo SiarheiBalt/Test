@@ -20,3 +20,10 @@
   font-weight: 600;
   color: gray;
 }
+.deal {
+  text-align: center;
+  word-break: break-all;
+  font-size: 0.8em;
+}
+.deal div {
+}
