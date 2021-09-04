@@ -13,11 +13,11 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header />
-        <Route exact path="/homePage" />
+        <Route exact path="/ " />
         <Route exact path="/">
-          <Redirect to="/homePage" />
+          <Redirect to="/ " />
         </Route>
-        <Route path="/homePage" component={HomePage} />
+        <Route path="/ " component={HomePage} />
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />
         <Route path="/info" component={Info} />

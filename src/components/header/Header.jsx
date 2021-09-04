@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <header className={cl.header}>
       <div className={cl.link}>
-        <NavLink to="/homePage" activeClassName={cl.activ}>
+        <NavLink to="/ " activeClassName={cl.activ}>
           Home Page
         </NavLink>
       </div>
