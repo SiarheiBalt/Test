@@ -1,0 +1,12 @@
+.login {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: whitesmoke;
+  text-align: center;
+}
+.login h3 {
+  text-align: center;
+}
+.login button {
+  margin: 20px;
+}

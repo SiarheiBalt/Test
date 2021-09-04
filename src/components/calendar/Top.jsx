@@ -1,5 +1,4 @@
-import { ButtonForTop } from "./ButtonForTop";
-import { Input } from "./Input";
+import { Button } from "../common/Button";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import cl from "./Calendar.module.css";
@@ -7,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { ACTIONS } from "../../redux/constans";
 import { useState } from "react";
 import { OutputSearchLi } from "./OtputSearchLi";
+import { Input } from "../common/Input";
 
 const ico = <FontAwesomeIcon className={cl.ico} icon={faSearch} />;
 
@@ -40,8 +40,8 @@ export const Top = ({ cleanInputs, data }) => {
     <div className={cl.mask}>
       <div className={cl.top}>
         <div>
-          <ButtonForTop action={"Добавить"} onClick={addDeal} />
-          <ButtonForTop action={"Обновить"} onClick={updateDeal} />
+          <Button action={"Добавить"} onClick={addDeal} />
+          <Button action={"Обновить"} onClick={updateDeal} />
         </div>
         <div style={{ display: "flex" }}>
           <div>{ico}</div>

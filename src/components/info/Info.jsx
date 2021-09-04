@@ -1,10 +1,13 @@
+import { useSelector } from "react-redux";
 import { Article } from "./Article";
 import cl from "./Info.module.css";
 
-export const Info = () => {
+export const Info = ({ data }) => {
   return (
     <div className={cl.info}>
-      <Article />
+      {data.map((el, i) => (
+        <Article key={i} data={el} />
+      ))}
     </div>
   );
 };

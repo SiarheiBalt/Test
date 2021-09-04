@@ -1,24 +1,25 @@
 .info {
   width: 1000px;
   margin: auto;
-  background-color: honeydew;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .article {
-  padding: 10px;
   margin: 10px;
 }
 .article h3 {
   text-align: center;
 }
-.article_info {
-  display: flex;
-  /* margin: 0 20px; */
-}
 .picture {
   width: 200px;
   height: 300px;
   background-color: white;
+  float: left;
+  margin: 7px 7px 7px 0;
 }
 .text {
   margin-left: 20px;
+  text-indent: 25px;
+}
+.right_img {
 }

@@ -1,15 +1,15 @@
 import cl from "./Calendar.module.css";
-import { ButtonForTop } from "./ButtonForTop";
+import { Button } from "../common/Button";
 
 export const Navigation = ({ month, changeMonth, year, disabled }) => {
   return (
     <div className={cl.navigation}>
-      <ButtonForTop action={"<"} onClick={changeMonth} disabled={disabled} />
+      <Button action={"<"} onClick={changeMonth} disabled={disabled} />
       <span>
         {month} {year}
       </span>
-      <ButtonForTop action={">"} onClick={changeMonth} />
-      <ButtonForTop action={"Сегодня"} onClick={changeMonth} />
+      <Button action={">"} onClick={changeMonth} />
+      <Button action={"Сегодня"} onClick={changeMonth} />
     </div>
   );
 };

@@ -8,8 +8,7 @@ import { useState } from "react";
 import { Modal } from "./modal/Modal";
 import { useEffect } from "react";
 
-export const Calendar = () => {
-  let data = useSelector((store) => store.calendarReducer);
+export const Calendar = ({ data }) => {
   let dispatch = useDispatch();
   let [monthCounte, setMonthCounte] = useState(0);
   let [inputEvent, setInputEvent] = useState("");

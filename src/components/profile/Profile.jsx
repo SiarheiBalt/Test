@@ -5,8 +5,7 @@ import { DealsOutput } from "./DealsOutput";
 import cl from "./Profile.module.css";
 import { UserInfo } from "./UserInfo";
 
-export const Profile = () => {
-  const data = useSelector((store) => store);
+export const Profile = ({ userInfo, userEvents }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({ type: ACTIONS.GET_USER_DEALS });
@@ -14,8 +13,8 @@ export const Profile = () => {
 
   return (
     <div className={cl.container}>
-      <UserInfo userData={data.authReducer.userInfo} />
-      <DealsOutput eventsData={data.calendarReducer.userEvents} />
+      <UserInfo userData={userInfo} />
+      <DealsOutput eventsData={userEvents} />
     </div>
   );
 };
