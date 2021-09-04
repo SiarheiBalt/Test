@@ -2,16 +2,27 @@ import cl from "./Login.module.css";
 import { Button } from "../common/Button.jsx";
 import { Input } from "../common/Input";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { ACTIONS } from "../../redux/constans";
 
-export const Login = () => {
+export const Login = ({ acces, user }) => {
   const [loginInput, setLoginInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
+  const [wasAttempt, setWasAttempt] = useState(false);
+  const dispath = useDispatch();
 
   const onChangeLoginInput = (e) => {
     setLoginInput(e.target.value);
+    setWasAttempt(false);
   };
   const onChangePasswordInput = (e) => {
     setPasswordInput(e.target.value);
+    setWasAttempt(false);
+  };
+
+  const logOut = () => {
+    dispath({ type: ACTIONS.CLOSE_ACCES });
+    setWasAttempt(false);
   };
 
   const submit = () => {
@@ -19,22 +30,37 @@ export const Login = () => {
       login: loginInput,
       password: passwordInput,
     };
-    console.log(user);
+    dispath({ type: ACTIONS.OPEN_ACCES, user });
+    setLoginInput("");
+    setPasswordInput("");
+    setWasAttempt(true);
   };
 
   return (
     <div className={cl.login}>
-      <div>
-        <h3>login</h3>
-        <Input onchangeInput={onChangeLoginInput} value={loginInput} />
-
-        <h3>Password</h3>
-        <Input onchangeInput={onChangePasswordInput} value={passwordInput} />
-
+      {acces ? (
         <div>
-          <Button action={"Подтвердить"} onClick={submit} />
+          <h3>Выполнен вход пользователя: {user}</h3>
+          <Button action={"Выйти из профиля"} onClick={logOut} />
         </div>
-      </div>
+      ) : (
+        <div>
+          <h3>login</h3>
+          <Input onchangeInput={onChangeLoginInput} value={loginInput} />
+
+          <h3>Password</h3>
+          <Input onchangeInput={onChangePasswordInput} value={passwordInput} />
+
+          {wasAttempt && !acces && (
+            <div className={cl.error_mesage}>
+              Имя пользователя или пароль введены неверно
+            </div>
+          )}
+          <div>
+            <Button action={"Подтвердить"} onClick={submit} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

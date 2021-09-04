@@ -20,7 +20,15 @@ function App() {
           <Redirect to="/ " />
         </Route>
         <Route path="/ " component={HomePage} />
-        <Route path="/login" component={Login} />
+        <Route
+          path="/login"
+          render={() => (
+            <Login
+              acces={data.authReducer.acces}
+              user={data.authReducer.login}
+            />
+          )}
+        />
         <Route
           path="/profile"
           render={() => (
