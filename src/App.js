@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Header } from "./components/header/Header";
 import { Profile } from "./components/profile/Profile";
@@ -14,7 +13,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
+        <Header
+          isAuth={data.authReducer.isAuth}
+          user={data.authReducer.login}
+        />
         <Route exact path="/ " />
         <Route exact path="/">
           <Redirect to="/ " />
@@ -24,7 +26,7 @@ function App() {
           path="/login"
           render={() => (
             <Login
-              acces={data.authReducer.acces}
+              isAuth={data.authReducer.isAuth}
               user={data.authReducer.login}
             />
           )}
@@ -33,6 +35,7 @@ function App() {
           path="/profile"
           render={() => (
             <Profile
+              isAuth={data.authReducer.isAuth}
               userInfo={data.authReducer.userInfo}
               userEvents={data.calendarReducer.userEvents}
             />
@@ -41,7 +44,12 @@ function App() {
         <Route path="/info" render={() => <Info data={data.infoReducer} />} />
         <Route
           path="/calendar"
-          render={() => <Calendar data={data.calendarReducer} />}
+          render={() => (
+            <Calendar
+              data={data.calendarReducer}
+              isAuth={data.authReducer.isAuth}
+            />
+          )}
         />
       </div>
     </BrowserRouter>

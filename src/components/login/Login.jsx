@@ -4,13 +4,14 @@ import { Input } from "../common/Input";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { ACTIONS } from "../../redux/constans";
+import { Redirect } from "react-router-dom";
 
-export const Login = ({ acces, user }) => {
+export const Login = ({ isAuth, user }) => {
   const [loginInput, setLoginInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [wasAttempt, setWasAttempt] = useState(false);
   const dispath = useDispatch();
-
+  console.log(wasAttempt);
   const onChangeLoginInput = (e) => {
     setLoginInput(e.target.value);
     setWasAttempt(false);
@@ -36,9 +37,10 @@ export const Login = ({ acces, user }) => {
     setWasAttempt(true);
   };
 
+  if (isAuth && wasAttempt) return <Redirect to="Profile" />;
   return (
     <div className={cl.login}>
-      {acces ? (
+      {isAuth ? (
         <div>
           <h3>Выполнен вход пользователя: {user}</h3>
           <Button action={"Выйти из профиля"} onClick={logOut} />
@@ -51,7 +53,7 @@ export const Login = ({ acces, user }) => {
           <h3>Password</h3>
           <Input onchangeInput={onChangePasswordInput} value={passwordInput} />
 
-          {wasAttempt && !acces && (
+          {wasAttempt && !isAuth && (
             <div className={cl.error_mesage}>
               Имя пользователя или пароль введены неверно
             </div>

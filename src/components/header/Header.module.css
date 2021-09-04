@@ -1,8 +1,13 @@
 .header {
-  padding: 20px 100px;
-  background-color: whitesmoke;
+  width: 1000px;
+  margin: auto;
+  padding: 20px 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+.link {
+  width: 70px;
+  white-space: nowrap;
 }
 .link a {
   text-decoration: none;

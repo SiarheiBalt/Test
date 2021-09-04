@@ -7,8 +7,9 @@ import { ACTIONS } from "../../redux/constans";
 import { useState } from "react";
 import { Modal } from "./modal/Modal";
 import { useEffect } from "react";
+import { Redirect } from "react-router-dom";
 
-export const Calendar = ({ data }) => {
+export const Calendar = ({ data, isAuth }) => {
   let dispatch = useDispatch();
   let [monthCounte, setMonthCounte] = useState(0);
   let [inputEvent, setInputEvent] = useState("");
@@ -58,6 +59,8 @@ export const Calendar = ({ data }) => {
     dispatch({ type: ACTIONS.CLOSE_FORM_ADD_DEAL });
     cleanInputs();
   };
+
+  if (!isAuth) return <Redirect to="Login" />;
   return (
     <div className={cl.calendar}>
       <Top
