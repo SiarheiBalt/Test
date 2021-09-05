@@ -1,4 +1,4 @@
-## [TEST](https://siarheibalt.github.io/Test/)
+## [TEST](https://siarheibalt.github.io/Test)
 
 ### `Описание`
 

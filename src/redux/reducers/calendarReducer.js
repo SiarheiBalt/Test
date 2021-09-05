@@ -19,7 +19,7 @@ const defaultState = {
   isFormDealOpen: false,
   userEvents: [],
 };
-console.log(createMonth(year, month - 1));
+
 export const calendarReducer = (state = defaultState, action) => {
   switch (action.type) {
     case ACTIONS.GET_NEXT_MONTH:
