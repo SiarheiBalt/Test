@@ -17,7 +17,10 @@ function App() {
           isAuth={data.authReducer.isAuth}
           user={data.authReducer.login}
         />
-        <Route exact path="/ " />
+
+        <Route exact path="/Test">
+          <Redirect to="/ " />
+        </Route>
         <Route exact path="/">
           <Redirect to="/ " />
         </Route>

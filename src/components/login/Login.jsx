@@ -47,7 +47,7 @@ export const Login = ({ isAuth, user }) => {
         </div>
       ) : (
         <div>
-          <h3>login</h3>
+          <h3>Login</h3>
           <Input onchangeInput={onChangeLoginInput} value={loginInput} />
 
           <h3>Password</h3>
