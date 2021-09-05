@@ -7,10 +7,11 @@ import { ACTIONS } from "../../redux/constans";
 import { useState } from "react";
 import { OutputSearchLi } from "./OtputSearchLi";
 import { Input } from "../common/Input";
+import { getNameofMounth } from "../../redux/functions";
 
 const ico = <FontAwesomeIcon className={cl.ico} icon={faSearch} />;
 
-export const Top = ({ cleanInputs, data }) => {
+export const Top = ({ cleanInputs, data, selectedDay }) => {
   const [input, setInput] = useState("");
   const [main, setMain] = useState("");
 
@@ -40,8 +41,16 @@ export const Top = ({ cleanInputs, data }) => {
     <div className={cl.mask}>
       <div className={cl.top}>
         <div>
-          <Button action={"Добавить"} onClick={addDeal} />
-          <Button action={"Обновить"} onClick={updateDeal} />
+          <Button
+            action={"Добавить"}
+            onClick={addDeal}
+            disabled={selectedDay === ""}
+          />
+          <Button
+            action={"Обновить"}
+            onClick={updateDeal}
+            disabled={selectedDay === ""}
+          />
         </div>
         <div style={{ display: "flex" }}>
           <div>{ico}</div>
@@ -53,7 +62,7 @@ export const Top = ({ cleanInputs, data }) => {
               main.map((el, i) => (
                 <OutputSearchLi
                   key={i}
-                  day={el.day}
+                  day={getNameofMounth(el.month)}
                   deal={el.deal}
                   month={data.month}
                 />

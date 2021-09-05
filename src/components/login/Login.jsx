@@ -11,7 +11,7 @@ export const Login = ({ isAuth, user }) => {
   const [passwordInput, setPasswordInput] = useState("");
   const [wasAttempt, setWasAttempt] = useState(false);
   const dispath = useDispatch();
-  console.log(wasAttempt);
+
   const onChangeLoginInput = (e) => {
     setLoginInput(e.target.value);
     setWasAttempt(false);

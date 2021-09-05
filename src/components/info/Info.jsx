@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import { Article } from "./Article";
 import cl from "./Info.module.css";
 

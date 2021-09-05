@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { ACTIONS } from "../../redux/constans";
 import { getDayOfWeek } from "../../redux/functions";
@@ -6,12 +5,13 @@ import { Day } from "./Day";
 import "./Grid.css";
 
 export const Days = ({ days, today, selected }) => {
-  let daysOfWeek = getDayOfWeek();
+  const daysOfWeek = getDayOfWeek();
   const dispatch = useDispatch();
 
   const select = (data) => {
     dispatch({ type: ACTIONS.SELECT_DAY, data });
   };
+
   return (
     <div className={"grid"}>
       {days.map((el, i) => (

@@ -46,6 +46,7 @@ function App() {
           path="/calendar"
           render={() => (
             <Calendar
+              selectedDay={data.calendarReducer.selectedDay}
               data={data.calendarReducer}
               isAuth={data.authReducer.isAuth}
             />

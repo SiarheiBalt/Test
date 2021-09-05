@@ -9,13 +9,13 @@ import { Modal } from "./modal/Modal";
 import { useEffect } from "react";
 import { Redirect } from "react-router-dom";
 
-export const Calendar = ({ data, isAuth }) => {
-  let dispatch = useDispatch();
-  let [monthCounte, setMonthCounte] = useState(0);
-  let [inputEvent, setInputEvent] = useState("");
-  let [inputText, setInputText] = useState("");
+export const Calendar = ({ data, isAuth, selectedDay }) => {
+  const dispatch = useDispatch();
+  const [monthCounte, setMonthCounte] = useState(0);
+  const [inputEvent, setInputEvent] = useState("");
+  const [inputText, setInputText] = useState("");
 
-  let deal = data.selectedDay.deal;
+  const deal = data.selectedDay.deal;
   useEffect(() => {
     if (deal !== null) {
       if (deal) {
@@ -64,6 +64,7 @@ export const Calendar = ({ data, isAuth }) => {
   return (
     <div className={cl.calendar}>
       <Top
+        selectedDay={selectedDay}
         changeMonth={changeMonth}
         cleanInputs={cleanInputs}
         data={data.currentlyDate[monthCounte]}
