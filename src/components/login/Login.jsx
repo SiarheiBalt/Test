@@ -51,7 +51,11 @@ export const Login = ({ isAuth, user }) => {
           <Input onchangeInput={onChangeLoginInput} value={loginInput} />
 
           <h3>Password</h3>
-          <Input onchangeInput={onChangePasswordInput} value={passwordInput} />
+          <Input
+            onchangeInput={onChangePasswordInput}
+            value={passwordInput}
+            type={"password"}
+          />
 
           {wasAttempt && !isAuth && (
             <div className={cl.error_mesage}>

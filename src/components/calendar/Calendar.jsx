@@ -2,7 +2,7 @@ import cl from "./Calendar.module.css";
 import { Days } from "./Days";
 import { Navigation } from "./Navigation";
 import { Top } from "./Top";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ACTIONS } from "../../redux/constans";
 import { useState } from "react";
 import { Modal } from "./modal/Modal";
